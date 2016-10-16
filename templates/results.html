@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Kareem and Anshul's GIF Search</title>
+        
+        <!-- Bootstrap 4 CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css">
+    </head>
+    <body>
+        
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-static-top navbar-dark bg-inverse">
+            <div class="container">
+                <a class="navbar-brand" href="/">Kareem and Anshul's GIF Search</a>
+                <ul class="nav navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+        <!-- Jumbotron -->
+        <div class="jumbotron">
+            <div class="container">
+            <!-- this will guide users if their search terms don't generate results-->
+                {% if results == None %}
+
+                <h1>Whoops, looks like Giphy couldn't find any GIFs tagged with the search term {{ '"{}"'.format(searchterm) }}</h1>
+
+                {% else %}
+
+                <h1>GIFs tagged with {{ '"{}"'.format(searchterm) }}</h1>
+
+                {% endif %}
+
+                <a href="/">Back to search</a>
+            </div>
+        </div>
+
+        <!-- GIF Search Results -->
+        <div class="container">
+            <div class="card-columns">
+            
+                {% for result in results %}
+    
+                    <div class="card">
+                        <a href="{{result.url}}" target="_blank">
+                            <img class="card-img-top" src="{{result.media_url}}" style="width:100%; height:auto;">
+                        </a>
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+            <!-- Footer -->
+            <hr>
+            <footer>
+                <p>© Kareem and Anshul 2016</p>
+            </footer>
+
+        </div>
+    </body>
+</html>

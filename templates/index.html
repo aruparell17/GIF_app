@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>Kareem and Anshul's GIF Search</title>
+        
+        <!-- Bootstrap 4 CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css">
+    </head>
+    <body>
+        
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-static-top navbar-dark bg-inverse">
+            <div class="container">
+                <a class="navbar-brand" href="/">Kareem and Anshul's GIF Search</a>
+                <ul class="nav navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+        <!-- Jumbotron -->
+        <div class="jumbotron">
+            <div class="container">
+                <h1>{{price}}</h1>
+                <p>This is a GIF search engine. Who doesn't love GIFs? Terrible people. Are you a terrible person? I didn't think so. Now go ahead and search for a GIF below. You're welcome!</p>
+                <form action="/results" class="form-inline">
+                    <div class="form-group">
+                        <input type="text" name="searchterm"
+                        placeholder="Search for a GIF" class="form-control">
+                    </div>
+                       <input type="submit" class="btn btn-primary">
+                </form>
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- Columns -->
+            <div class="row">
+    
+            </div>
+            
+            <!-- Footer -->
+            <hr>
+            <footer>
+                <p>© Kareem and Anshul 2016</p>
+            </footer>
+
+        </div>
+    </body>
+</html>
