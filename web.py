@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 import giphypop
+import os
 app = Flask(__name__)
 
 g = giphypop.Giphy()
@@ -22,4 +23,5 @@ def results():
 def about():
     return render_template('about.html')
 
-app.run(debug=True)
+port = int(os.environ.get("PORT", 5000))
+app.run(host="0.0.0.0", port=port)
